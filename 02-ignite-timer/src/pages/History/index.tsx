@@ -10,8 +10,6 @@ export function History() {
   return (
     <HistoryContainer>
       <h1>Meu histórico</h1>
-
-      <pre>{JSON.stringify(cycles, null, 2)}</pre>
       <HistoryList>
         <table>
           <thead>
@@ -29,7 +27,7 @@ export function History() {
                   <td>{cycle.task}</td>
                   <td>{cycle.minutesAmount} minutos</td>
                   <td>
-                    {formatDistanceToNow(cycle.startDate, {
+                    {formatDistanceToNow(new Date(cycle.startDate), {
                       addSuffix: true,
                       locale: ptBR,
                     })}
